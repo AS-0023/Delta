@@ -1,0 +1,290 @@
+.scrum-board-page {
+    background-color: var(--jira-bg, #0e1015);
+    min-height: 100vh;
+    padding: 100px 40px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Ubuntu, "Droid Sans", "Helvetica Neue", sans-serif;
+    color: var(--text-main, #ffffff);
+}
+
+.scrum-header {
+    margin-bottom: 24px;
+}
+
+.scrum-breadcrumbs {
+    font-size: 12px;
+    color: #8c9bab;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.scrum-header h1 {
+    font-size: 24px;
+    margin: 0 0 16px 0;
+    font-weight: 600;
+}
+
+.scrum-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.search-bar input {
+    background: #1d2125;
+    border: 1px solid #738496;
+    border-radius: 4px;
+    padding: 6px 12px;
+    color: white;
+    font-size: 14px;
+    width: 200px;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: #388bff;
+}
+
+.members {
+    display: flex;
+    gap: -8px;
+    margin-right: 16px;
+}
+
+.member-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #0052cc;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    border: 2px solid #0e1015;
+    margin-right: -8px;
+    position: relative;
+    cursor: pointer;
+}
+
+.add-member {
+    background-color: #22272b;
+    border: 2px dashed #738496;
+    color: #8c9bab;
+}
+
+.btn-insight {
+    background: #22272b;
+    border: none;
+    color: #b6c2cf;
+    padding: 6px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn-complete-sprint {
+    background: #e9ebee;
+    border: none;
+    color: #44546f;
+    padding: 6px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-left: auto;
+}
+
+.btn-complete-sprint:hover {
+    background: #dcdfe4;
+}
+
+.board-container {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 16px;
+}
+
+.board-column {
+    background-color: #161a1d;
+    border-radius: 12px;
+    min-width: 280px;
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+}
+
+.column-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    padding: 4px;
+}
+
+.column-header h3 {
+    font-size: 12px;
+    font-weight: 600;
+    color: #8c9bab;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.item-count {
+    font-size: 12px;
+    background: #22272b;
+    padding: 2px 6px;
+    border-radius: 10px;
+    color: #b6c2cf;
+}
+
+.column-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 50px;
+}
+
+.board-card {
+    background-color: #22272b;
+    border: 1px solid #161a1d;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s;
+}
+
+.board-card:hover {
+    background-color: #2c333a;
+}
+
+.card-content {
+    font-size: 14px;
+    margin: 0 0 12px 0;
+    color: #b6c2cf;
+    line-height: 1.4;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-tags {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.type-icon {
+    display: flex;
+    align-items: center;
+}
+
+.card-id {
+    font-size: 12px;
+    color: #8c9bab;
+    font-family: monospace;
+}
+
+.card-assignee {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #0052cc;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.add-card-btn {
+    background: transparent;
+    border: none;
+    color: #c1c7d0;
+    padding: 8px;
+    text-align: left;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.add-card-btn:hover {
+    background: #22272b;
+}
+
+.add-card-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.add-card-form textarea {
+    background: #22272b;
+    border: 2px solid #388bff;
+    border-radius: 8px;
+    color: white;
+    padding: 8px;
+    min-height: 60px;
+    font-size: 14px;
+    resize: none;
+    outline: none;
+    font-family: inherit;
+}
+
+.add-card-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-save {
+    background: #0052cc;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn-save:hover {
+    background: #0065ff;
+}
+
+.btn-cancel {
+    background: transparent;
+    color: #b6c2cf;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn-cancel:hover {
+    background: #22272b;
+}
+
+/* Scrollbar styling for board */
+.board-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.board-container::-webkit-scrollbar-track {
+    background: #161a1d;
+    border-radius: 4px;
+}
+
+.board-container::-webkit-scrollbar-thumb {
+    background: #738496;
+    border-radius: 4px;
+}
+
+.board-container::-webkit-scrollbar-thumb:hover {
+    background: #8c9bab;
+}

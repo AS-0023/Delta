@@ -1,0 +1,215 @@
+.scrum-template-page {
+    background-color: var(--jira-bg, #0e1015);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    padding: 100px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+}
+
+.scrum-template-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+.scrum-sidebar {
+    width: 320px;
+    flex-shrink: 0;
+}
+
+.scrum-sidebar h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.scrum-sidebar p {
+    color: #b3b9c4;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.btn-use-template {
+    background-color: #0052cc;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    padding: 12px 24px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    width: auto;
+    margin-bottom: 40px;
+    min-width: 160px;
+}
+
+.btn-use-template:hover {
+    background-color: #0065ff;
+}
+
+.sidebar-section {
+    margin-bottom: 30px;
+}
+
+.sidebar-section h4 {
+    font-size: 12px;
+    color: #8c9bab;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    color: #dfe1e6;
+    font-size: 15px;
+}
+
+.scrum-main-content {
+    flex: 1;
+    min-width: 400px;
+}
+
+.scrum-main-content h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.scrum-main-content>p {
+    color: #b3b9c4;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.tabs-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: transparent;
+    border: 1px solid #738496;
+    color: #b3b9c4;
+    padding: 10px 24px;
+    border-radius: 24px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tab-btn.active {
+    background: #0052cc;
+    border-color: #0052cc;
+    color: white;
+}
+
+.tab-btn:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tab-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.tab-image-container {
+    flex: 1.5;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+    /* Make the background white to show the image cleanly since the images are light mode */
+    padding: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.tab-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.tab-text {
+    flex: 1;
+}
+
+.tab-text h3 {
+    font-size: 28px;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.tab-text p {
+    color: #b3b9c4;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+    .scrum-template-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .scrum-sidebar,
+    .scrum-main-content {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .tab-content {
+        flex-direction: column;
+    }
+}
+
+.scrum-video-section {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+.scrum-video-section h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.scrum-video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 Aspect Ratio */
+    height: 0;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.scrum-video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
