@@ -1,0 +1,67 @@
+/* RadiantDomeSection.css */
+.radiant-dome-section {
+    --bg-center: #fdf0c6;
+    --bg-mid: #e8e2c7;
+    --bg-edge: #dbe4f4;
+
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    min-height: 600px;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 100%, var(--bg-center) 0%, var(--bg-mid) 25%, var(--bg-edge) 60%, var(--bg-edge) 100%);
+    transition: background 0.6s ease;
+}
+
+.radiant-dome-section.dark-mode {
+    --bg-center: #4a3820;
+    --bg-mid: #20222a;
+    --bg-edge: #0d111a;
+}
+
+.radiant-dome-controls {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    gap: 12px;
+    z-index: 10;
+}
+
+.rd-btn {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #444;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.rd-btn:hover {
+    background: rgba(255, 255, 255, 0.95);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08);
+}
+
+.radiant-dome-section.dark-mode .rd-btn {
+    background: rgba(40, 40, 40, 0.6);
+    border-color: rgba(255, 255, 255, 0.05);
+    color: #eee;
+}
+
+.radiant-dome-section.dark-mode .rd-btn:hover {
+    background: rgba(60, 60, 60, 0.8);
+}
+
+.radiant-dome-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}

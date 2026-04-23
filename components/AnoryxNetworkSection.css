@@ -1,0 +1,72 @@
+/* AnoryxNetworkSection.css */
+.anoryx-network-section {
+    position: relative;
+    width: 100%;
+    min-height: 800px;
+    background-color: #000B18;
+    /* Fallback for rendering */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.anoryx-network-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: auto;
+    /* Allow mouse interaction for the parallax canvas */
+}
+
+.anoryx-content-overlay {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.anoryx-center-text {
+    font-size: 4rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 12px;
+    margin: 0;
+    padding-left: 12px;
+    /* Visual balance for letter spacing */
+    text-shadow: 0 0 20px rgba(0, 242, 254, 0.8), 0 0 40px rgba(0, 242, 254, 0.4);
+    animation: textPulse 4s infinite ease-in-out;
+}
+
+@keyframes textPulse {
+
+    0%,
+    100% {
+        text-shadow: 0 0 20px rgba(0, 242, 254, 0.7);
+        transform: scale(1);
+    }
+
+    50% {
+        text-shadow: 0 0 35px rgba(0, 242, 254, 1), 0 0 50px rgba(79, 172, 254, 0.8);
+        transform: scale(1.02);
+    }
+}
+
+@media (max-width: 768px) {
+    .anoryx-network-section {
+        min-height: 600px;
+    }
+
+    .anoryx-center-text {
+        font-size: 2.2rem;
+        letter-spacing: 6px;
+        padding-left: 6px;
+    }
+}

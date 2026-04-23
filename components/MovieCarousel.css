@@ -1,0 +1,418 @@
+.movie-carousel-section {
+    position: relative;
+    padding: 100px 0 60px 0;
+    background: #0e1015;
+    /* solid background color to match the homepage */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 700px;
+    font-family: 'Inter', sans-serif;
+}
+
+.carousel-header {
+    text-align: center;
+    margin-bottom: 20px;
+    z-index: 5;
+    position: relative;
+}
+
+.carousel-header h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin: 0;
+    color: #ffffff;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.carousel-glow-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 90%;
+    background: radial-gradient(ellipse, rgba(14, 16, 21, 0.9) 0%, rgba(5, 5, 5, 0) 70%);
+    z-index: 0;
+    pointer-events: none;
+    filter: blur(100px);
+    /* Deep rich blurry glow */
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.carousel-card {
+    position: absolute;
+    width: 280px;
+    height: 420px;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    background: #111;
+    user-select: none;
+    will-change: transform, opacity;
+}
+
+.carousel-card img.card-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0.8;
+    transition: opacity 0.6s ease;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.85) 100%);
+    z-index: 2;
+    transition: background 0.6s ease;
+}
+
+.card-top {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    z-index: 3;
+}
+
+.platform-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.rating {
+    font-size: 28px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    margin-top: -4px;
+}
+
+.rating span {
+    font-size: 16px;
+    margin-top: 4px;
+}
+
+.card-bottom {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 3;
+    color: #fff;
+    transition: opacity 0.6s ease;
+}
+
+.card-bottom h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.card-meta {
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+}
+
+.meta-badge {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+    padding: 4px 10px;
+    border-radius: 6px;
+    color: #eee;
+}
+
+/* CAROUSEL POSITIONS */
+
+.carousel-card.active {
+    transform: translateX(0) scale(1.15);
+    z-index: 10;
+    opacity: 1;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.carousel-card.active img.card-bg-image {
+    opacity: 1;
+}
+
+.carousel-card.active .card-overlay {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.9) 100%);
+}
+
+.carousel-card.prev-1 {
+    transform: translateX(-240px) scale(0.9);
+    z-index: 8;
+    opacity: 0.65;
+}
+
+.carousel-card.next-1 {
+    transform: translateX(240px) scale(0.9);
+    z-index: 8;
+    opacity: 0.65;
+}
+
+.carousel-card.prev-2 {
+    transform: translateX(-420px) scale(0.7);
+    z-index: 6;
+    opacity: 0.4;
+}
+
+.carousel-card.next-2 {
+    transform: translateX(420px) scale(0.7);
+    z-index: 6;
+    opacity: 0.4;
+}
+
+.carousel-card.hidden {
+    transform: translateX(0) scale(0.4);
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    .carousel-card.prev-1 {
+        transform: translateX(-180px) scale(0.85);
+    }
+
+    .carousel-card.next-1 {
+        transform: translateX(180px) scale(0.85);
+    }
+
+    .carousel-card.prev-2 {
+        transform: translateX(-310px) scale(0.65);
+    }
+
+    .carousel-card.next-2 {
+        transform: translateX(310px) scale(0.65);
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-card {
+        width: 220px;
+        height: 330px;
+    }
+
+    .carousel-card.active {
+        transform: translateX(0) scale(1.1);
+    }
+
+    .carousel-card.prev-1 {
+        transform: translateX(-140px) scale(0.85);
+    }
+
+    .carousel-card.next-1 {
+        transform: translateX(140px) scale(0.85);
+    }
+
+    .carousel-card.prev-2 {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .carousel-card.next-2 {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .card-bottom h3 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-card {
+        width: 180px;
+        height: 270px;
+    }
+
+    .carousel-card.active {
+        transform: translateX(0) scale(1.05);
+    }
+
+    .carousel-card.prev-1 {
+        transform: translateX(-100px) scale(0.8);
+        opacity: 0.5;
+    }
+
+    .carousel-card.next-1 {
+        transform: translateX(100px) scale(0.8);
+        opacity: 0.5;
+    }
+
+    .rating {
+        font-size: 20px;
+    }
+}
+
+/* AI FEATURE MODAL */
+.ai-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    animation: fadeInModal 0.3s forwards;
+}
+
+@keyframes fadeInModal {
+    to {
+        opacity: 1;
+    }
+}
+
+.ai-modal-content {
+    width: 850px;
+    height: 480px;
+    background: #0e1015;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 242, 254, 0.3);
+    transform: scale(0.9);
+    animation: popInModal 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes popInModal {
+    to {
+        transform: scale(1);
+    }
+}
+
+.ai-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.2s, transform 0.2s;
+    z-index: 10;
+}
+
+.ai-modal-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.ai-modal-left {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-modal-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.ai-modal-left:hover img {
+    transform: scale(1.05);
+}
+
+.ai-modal-right {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent);
+}
+
+.ai-modal-right h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #ffffff, #a0a0a0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.2;
+}
+
+.ai-modal-right p {
+    color: #b3b3b3;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    font-size: 15px;
+}
+
+.ai-modal-button {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #00C6FF 0%, #0072FF 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-size: 14px;
+}
+
+.ai-modal-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 198, 255, 0.4);
+}

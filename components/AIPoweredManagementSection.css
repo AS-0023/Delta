@@ -1,0 +1,568 @@
+.ai-management-section {
+    background-color: #f4f5f7;
+    padding: 60px 20px 100px;
+    font-family: "Inter", -apple-system, sans-serif;
+    color: #172b4d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.ai-mgt-blue-shape-container {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    height: 520px;
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+}
+
+.ai-mgt-blue-shape {
+    width: 95%;
+    max-width: 1400px;
+    height: 100%;
+    background-color: #0c66e4;
+    clip-path: polygon(0 0, 85% 0, 85% 20%, 100% 20%, 100% 100%, 0 100%);
+}
+
+.ai-mgt-header-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 50px;
+    padding-top: 50px;
+}
+
+.ai-mgt-header {
+    text-align: left;
+    max-width: 800px;
+}
+
+.ai-mgt-category {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #ffffff;
+}
+
+.ai-mgt-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: #ffffff;
+    letter-spacing: -1px;
+}
+
+.ai-mgt-subtitle {
+    font-size: 1.25rem;
+    color: #ffffff;
+    opacity: 0.9;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.ai-mgt-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.ai-mgt-card-new {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(9, 30, 66, 0.08);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.ai-mgt-card-new:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(9, 30, 66, 0.12);
+}
+
+.ai-mgt-mockup-wrapper {
+    height: 300px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #dfe1e6;
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-mgt-mockup-wrapper.gray-bg {
+    background-color: #f4f5f7;
+}
+
+.ai-mgt-mockup-wrapper.purple-bg {
+    background-color: #eae6ff;
+}
+
+.ai-mgt-card-text-area {
+    padding: 32px;
+    background-color: #ffffff;
+    flex-grow: 1;
+}
+
+.ai-mgt-card-icon {
+    color: #0052CC;
+    margin-bottom: 16px;
+}
+
+.ai-mgt-card-text-area h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #091E42;
+    letter-spacing: -0.5px;
+}
+
+.ai-mgt-card-text-area p {
+    font-size: 1.05rem;
+    color: #42526E;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ==================================================
+   MOCKUP 1: Align Goals
+================================================== */
+.mock-align-goals {
+    padding: 20px;
+    font-size: 0.75rem;
+    color: #172b4d;
+}
+
+.mag-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #dfe1e6;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+.mag-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mag-tag-green {
+    background: #abf5d1;
+    color: #006644;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.mag-body {
+    display: flex;
+    gap: 20px;
+}
+
+.mag-main {
+    flex: 3;
+}
+
+.mag-sidebar {
+    flex: 1;
+    border-left: 1px solid #dfe1e6;
+    padding-left: 12px;
+}
+
+.mag-section-title {
+    font-weight: bold;
+    color: #5e6c84;
+    margin-bottom: 8px;
+}
+
+.mag-table {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mag-table-header {
+    display: flex;
+    justify-content: space-between;
+    color: #5e6c84;
+    font-weight: bold;
+    border-bottom: 1px solid #dfe1e6;
+    padding-bottom: 4px;
+}
+
+.mag-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0;
+    border-bottom: 1px solid #f4f5f7;
+}
+
+.mag-icon {
+    width: 16px;
+    display: inline-block;
+}
+
+.mag-badge {
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 0.65rem;
+}
+
+.mag-badge.yellow {
+    background: #ffc400;
+    color: #172b4d;
+}
+
+.mag-badge.green {
+    background: #abf5d1;
+    color: #006644;
+}
+
+.mag-badge.blue {
+    background: #deebff;
+    color: #0747a6;
+}
+
+.mag-avatar {
+    width: 20px;
+    height: 20px;
+    background: #0052cc;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+}
+
+.mt-2 {
+    margin-top: 16px;
+}
+
+/* ==================================================
+   MOCKUP 2: Plan and Assign
+================================================== */
+.mock-plan-assign {
+    padding: 24px;
+    position: relative;
+    height: 100%;
+}
+
+.mpa-breadcrumbs {
+    font-size: 0.7rem;
+    color: #5e6c84;
+    margin-bottom: 8px;
+}
+
+.mpa-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #172b4d;
+    margin-bottom: 12px;
+}
+
+.mpa-buttons button {
+    background: #e9eaef;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    margin-right: 8px;
+    font-weight: 500;
+}
+
+.mpa-buttons button.blue-btn {
+    background: #deebff;
+    color: #0052cc;
+}
+
+.mpa-modal {
+    background: white;
+    border: 1px solid #dfe1e6;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(9, 30, 66, 0.15);
+    margin-top: 16px;
+    padding: 12px;
+    width: 350px;
+    position: absolute;
+    left: 40px;
+    top: 100px;
+}
+
+.mpa-tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 12px 0;
+    font-size: 0.75rem;
+    border-top: 1px solid #dfe1e6;
+    border-bottom: 1px solid #dfe1e6;
+    padding: 12px 0;
+}
+
+.mpa-task {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mpa-task-id {
+    font-weight: bold;
+    color: #5e6c84;
+}
+
+.mpa-input-box input {
+    width: 100%;
+    border: 1px solid #0052cc;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.mpa-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    font-size: 0.7rem;
+    color: #5e6c84;
+}
+
+.blue-solid-btn {
+    background: #0052cc;
+    color: white;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* ==================================================
+   MOCKUP 3: Automate
+================================================== */
+.mock-automate {
+    display: flex;
+    height: 100%;
+    background: #fff;
+}
+
+.ma-flowchart {
+    flex: 1;
+    border-right: 1px solid #dfe1e6;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+}
+
+.ma-node {
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid #dfe1e6;
+    background: white;
+    width: 100px;
+    text-align: center;
+}
+
+.ma-node.start {
+    background: #42526e;
+    color: white;
+    border-radius: 20px;
+    width: 60px;
+}
+
+.ma-node.blue {
+    color: #0052cc;
+    border-color: #0052cc;
+    background: #deebff;
+}
+
+.ma-chat {
+    flex: 1;
+    padding: 16px;
+    background: #f4f5f7;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+}
+
+.ma-chat-header {
+    font-weight: bold;
+    color: #0052cc;
+    margin-bottom: 16px;
+}
+
+.ma-chat-bubble {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    max-width: 90%;
+}
+
+.ma-chat-bubble.user {
+    background: #deebff;
+    align-self: flex-end;
+    color: #172b4d;
+}
+
+.ma-chat-bubble.ai {
+    background: white;
+    border: 1px solid #dfe1e6;
+    align-self: flex-start;
+}
+
+.ma-tag {
+    background: #dfe1e6;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.65rem;
+    font-weight: bold;
+}
+
+/* ==================================================
+   MOCKUP 4: Track Progress
+================================================== */
+.mock-track {
+    height: 100%;
+    color: #172b4d;
+}
+
+.mt-header {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    padding: 16px 20px 0;
+}
+
+.mt-tabs {
+    font-size: 0.8rem;
+    color: #5e6c84;
+    font-weight: 500;
+    border-bottom: 1px solid #dfe1e6;
+    padding: 0 20px 12px;
+    gap: 16px;
+    display: flex;
+}
+
+.mt-body {
+    position: relative;
+    height: 100%;
+}
+
+.mt-chart-area {
+    padding: 20px;
+}
+
+.mt-pie-chart {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: conic-gradient(#403294 0% 20%, #ffc400 20% 35%, #0052cc 35% 60%, #36b37e 60% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mt-pie-inner {
+    width: 80px;
+    height: 80px;
+    background: #eae6ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    text-align: center;
+    flex-direction: column;
+    font-size: 1.2rem;
+}
+
+.mt-pie-inner br {
+    display: none;
+}
+
+.mt-pie-inner {
+    font-size: 0.9rem;
+}
+
+.mt-goals-modal {
+    position: absolute;
+    right: 20px;
+    top: -10px;
+    width: 280px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(9, 30, 66, 0.15);
+    padding: 16px;
+    border: 1px solid #dfe1e6;
+}
+
+.mt-goals-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+}
+
+.mt-progress-bar {
+    display: flex;
+    height: 24px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    gap: 4px;
+}
+
+.mt-bar {
+    height: 100%;
+    border-radius: 4px;
+}
+
+.mt-bar.green {
+    background: #36b37e;
+}
+
+.mt-bar.yellow {
+    background: #ffc400;
+}
+
+.mt-bar.red {
+    background: #bf2600;
+}
+
+.mt-goal-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 0.75rem;
+}
+
+.mt-goal-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+@media (max-width: 900px) {
+    .ai-mgt-grid {
+        grid-template-columns: 1fr;
+    }
+}

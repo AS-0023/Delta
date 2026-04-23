@@ -1,0 +1,118 @@
+/* InteractivePricingSection.css */
+.interactive-pricing-section {
+    position: relative;
+    width: 100%;
+    background-color: #ffffff;
+    overflow: hidden;
+    padding: 180px 5%;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.pricing-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: auto;
+    /* need to capture mouse move */
+    z-index: 1;
+}
+
+.pricing-grid {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+    /* Let the canvas under it receive mouse events */
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.pricing-card {
+    pointer-events: auto;
+    /* Card itsel catches hover */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 60px 40px;
+}
+
+.badge {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+}
+
+.dark-badge {
+    background: #ffffff;
+    color: #3c4043;
+    border: 1px solid #e8eaed;
+}
+
+.light-badge {
+    background: #ffffff;
+    color: #3c4043;
+    border: 1px solid #e8eaed;
+}
+
+.pricing-title {
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 36px;
+    color: #202124;
+    letter-spacing: -1.2px;
+}
+
+.pricing-title span {
+    color: #5f6368;
+    font-size: 38px;
+}
+
+.pricing-btn {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 12px 32px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    outline: none;
+}
+
+.primary-btn {
+    background: #202124;
+    color: #ffffff;
+}
+
+.primary-btn:hover {
+    background: #000000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.secondary-btn {
+    background: #f8f9fa;
+    color: #202124;
+    border: 1px solid #dadce0;
+}
+
+.secondary-btn:hover {
+    background: #f1f3f4;
+}
+
+@media (max-width: 960px) {
+    .pricing-grid {
+        flex-direction: column;
+    }
+}

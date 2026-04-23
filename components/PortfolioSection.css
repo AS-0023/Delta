@@ -1,0 +1,266 @@
+.portfolio-section {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background: #050505;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* --- Dynamic Background with Motion --- */
+.portfolio-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, transparent 0%, #000 70%),
+        conic-gradient(from 0deg at 50% 50%, #0f172a 0deg, #1e1b4b 60deg, #312e81 120deg, #000000 180deg, #1e1b4b 240deg, #0f172a 300deg, #000000 360deg);
+    animation: bg-spin 60s linear infinite;
+    opacity: 0.6;
+    z-index: 0;
+}
+
+.portfolio-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(2px 2px at 20% 30%, #ffffff 100%, transparent),
+        radial-gradient(2px 2px at 40% 70%, #ffffff 100%, transparent),
+        radial-gradient(2px 2px at 60% 40%, #ffffff 100%, transparent),
+        radial-gradient(2px 2px at 80% 80%, #ffffff 100%, transparent);
+    background-size: 300px 300px;
+    animation: stars-move 100s linear infinite;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+@keyframes bg-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes stars-move {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-1000px);
+    }
+}
+
+/* --- Text Animation --- */
+.text-container {
+    position: relative;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    z-index: 10;
+}
+
+.portfolio-title {
+    position: absolute;
+    font-size: 5rem;
+    /* Increased size for impact */
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+    /* Pure white as requested */
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    white-space: nowrap;
+}
+
+.portfolio-title.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* --- 3D Orbit System --- */
+.cards-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    z-index: 10;
+    /* Ensure cards are above background */
+}
+
+.orbit-system {
+    position: relative;
+    width: 300px;
+    /* Radius of orbit */
+    height: 300px;
+    transform-style: preserve-3d;
+    animation: orbit-rotation 30s linear infinite;
+    /* Slower rotation for realism */
+}
+
+.orbit-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 280px;
+    height: 180px;
+    margin-top: -90px;
+    margin-left: -140px;
+    transform-style: preserve-3d;
+    /* Formula to distribute cards in a 3D spiral/circle */
+    transform:
+        rotateY(calc(var(--index) * (360deg / var(--total)))) translateZ(450px)
+        /* Increased radius for better spacing */
+        rotateX(10deg);
+}
+
+/* Keyframe for the main system rotation */
+@keyframes orbit-rotation {
+    0% {
+        transform: rotateY(0deg) rotateX(10deg);
+    }
+
+    100% {
+        transform: rotateY(360deg) rotateX(10deg);
+    }
+}
+
+/* --- Card Styles --- */
+.card-content {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    /* More subtle glass */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    /* Higher blur for realism */
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    /* Counter-rotate the cards so they always face somewhat forward */
+    animation: card-counter-rotation 30s linear infinite reverse;
+}
+
+.card-content:hover {
+    transform: scale(1.1) translateY(-10px);
+    box-shadow: 0 20px 50px rgba(var(--card-gradient), 0.5);
+    border-color: rgba(255, 255, 255, 0.6);
+    z-index: 20;
+}
+
+.card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--card-gradient);
+    opacity: 0.15;
+    /* Subtle tint initially */
+    z-index: -1;
+    transition: opacity 0.4s ease;
+}
+
+.card-content:hover .card-bg {
+    opacity: 0.3;
+    /* Brighter on hover */
+}
+
+.card-content h3 {
+    color: #fff;
+    margin: 0 0 12px 0;
+    font-size: 1.4rem;
+    /* Adjusted for longer titles */
+    font-weight: 700;
+    line-height: 1.3;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.see-more-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 18px;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.see-more-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(5px);
+}
+
+.play-icon {
+    font-size: 0.7rem;
+}
+
+@keyframes card-counter-rotation {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(-360deg);
+    }
+}
+
+/* Add Responsive adjustments */
+@media (max-width: 768px) {
+    .portfolio-title {
+        font-size: 3rem;
+    }
+
+    .orbit-system {
+        width: 200px;
+        height: 200px;
+    }
+
+    .orbit-card {
+        width: 220px;
+        height: 150px;
+        margin-top: -75px;
+        margin-left: -110px;
+        transform:
+            rotateY(calc(var(--index) * (360deg / var(--total)))) translateZ(280px);
+    }
+
+    .card-content h3 {
+        font-size: 1.1rem;
+    }
+}

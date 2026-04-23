@@ -1,0 +1,46 @@
+.digital-globe-hero {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 20% 50%, #0a1f4e 0%, #020c2a 40%, #010818 100%);
+    display: flex;
+    align-items: center;
+}
+
+.digital-globe-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 1;
+}
+
+/* Optional right-side text overlay */
+.digital-globe-text {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    max-width: 45%;
+    pointer-events: none;
+    text-align: left;
+}
+
+.digital-globe-text h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-shadow:
+        0 0 20px rgba(56, 189, 248, 0.9),
+        0 0 60px rgba(56, 189, 248, 0.5),
+        0 0 100px rgba(56, 189, 248, 0.2);
+}

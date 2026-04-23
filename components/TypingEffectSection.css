@@ -1,0 +1,48 @@
+.typing-section-wrapper {
+    margin: 0;
+    padding: 80px 20px;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #161616;
+}
+
+.typing-content {
+    max-width: 800px;
+    /* Widened from 360px to accommodate the longer text blocks better */
+    width: 100%;
+}
+
+.typing-effect {
+    display: none;
+}
+
+.typing-section-wrapper p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    /* Reduced from 40px since there's a lot of text */
+    color: #ffffdd;
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+.typing-section-wrapper p.title-typing {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #4285F4;
+    /* Accenting the title */
+}
+
+@media (max-width: 768px) {
+    .typing-section-wrapper p {
+        font-size: 18px;
+    }
+
+    .typing-section-wrapper p.title-typing {
+        font-size: 28px;
+    }
+}

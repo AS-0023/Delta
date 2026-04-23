@@ -1,0 +1,37 @@
+/* YoutubeVideoSection.css */
+.youtube-video-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px 100px 20px;
+    background-color: #0A1F44;
+    /* Matches the AIPromoVideo primary blue background */
+}
+
+.youtube-video-wrapper {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.video-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    /* 16:9 Aspect Ratio */
+    position: relative;
+    height: 0;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 198, 255, 0.3);
+    /* Soft neon blue glow */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.video-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: none;
+}

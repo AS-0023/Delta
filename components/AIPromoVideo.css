@@ -1,0 +1,336 @@
+/* AIPromoVideo.css */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&display=swap');
+
+:root {
+    --primary-blue: #0A1F44;
+    --accent-neon: #00C6FF;
+    --secondary-green: #32FF7E;
+    --warning-red: #FF4C4C;
+}
+
+.promo-video-container {
+    width: 100%;
+    background-color: var(--primary-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.video-frame {
+    position: relative;
+    width: 100%;
+    max-width: 1920px;
+    /* 4K ratio container downscaled slightly or allowed to grow */
+    aspect-ratio: 16 / 9;
+    background-color: var(--primary-blue);
+    overflow: hidden;
+    font-family: 'Outfit', sans-serif;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+}
+
+/* Camera Animation */
+.camera-push-in {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: cameraPushIn 15s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    transform-origin: center center;
+}
+
+@keyframes cameraPushIn {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Background Layers */
+.bg-dark-tech {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, #0B1426 0%, #030811 100%);
+    z-index: 1;
+}
+
+.bg-grid-lines {
+    position: absolute;
+    inset: -50%;
+    background-image:
+        linear-gradient(rgba(0, 198, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 198, 255, 0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: 2;
+    transform: perspective(800px) rotateX(60deg) translateY(-100px);
+    transform-origin: top center;
+    animation: gridMove 20s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes gridMove {
+    0% {
+        transform: perspective(800px) rotateX(60deg) translateY(0);
+    }
+
+    100% {
+        transform: perspective(800px) rotateX(60deg) translateY(60px);
+    }
+}
+
+/* Ambient Lighting Layers */
+.ambient-blue-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(150px);
+    z-index: 3;
+    pointer-events: none;
+}
+
+.primary-glow {
+    width: 800px;
+    height: 800px;
+    background: rgba(10, 31, 68, 0.8);
+    top: -200px;
+    left: -200px;
+    animation: pulseGlow 8s infinite alternate;
+}
+
+.accent-glow {
+    width: 600px;
+    height: 600px;
+    background: rgba(0, 198, 255, 0.15);
+    bottom: -100px;
+    right: -100px;
+    animation: pulseGlow 10s infinite alternate-reverse;
+}
+
+@keyframes pulseGlow {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+/* Neural Network Abstracts */
+.neural-network {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    opacity: 0.4;
+}
+
+.neural-line {
+    position: absolute;
+    background: linear-gradient(90deg, transparent, var(--accent-neon), transparent);
+    height: 1px;
+    width: 300px;
+    filter: blur(1px);
+}
+
+.line-1 {
+    top: 20%;
+    left: 10%;
+    transform: rotate(45deg);
+    animation: shootLine 6s infinite;
+}
+
+.line-2 {
+    top: 70%;
+    right: 20%;
+    transform: rotate(-30deg);
+    animation: shootLine 8s infinite 2s;
+}
+
+.line-3 {
+    top: 40%;
+    left: 60%;
+    transform: rotate(15deg);
+    animation: shootLine 7s infinite 4s;
+}
+
+@keyframes shootLine {
+    0% {
+        transform: scaleX(0) translateX(-200px);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scaleX(1) translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scaleX(0) translateX(200px);
+        opacity: 0;
+    }
+}
+
+/* Floating Particles Layers */
+.particles-container {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    overflow: hidden;
+}
+
+.crypto-particle {
+    position: relative;
+    background: var(--accent-neon);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-neon), 0 0 20px rgba(0, 198, 255, 0.4);
+    opacity: 0;
+    animation-name: floatParticle;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes floatParticle {
+    0% {
+        transform: translateY(100px) scale(0.5);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    80% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-100px) scale(1);
+        opacity: 0;
+    }
+}
+
+/* Scene 1 Content */
+.scene {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-wrapper {
+    position: relative;
+    text-align: center;
+    max-width: 80%;
+}
+
+.title-reveal {
+    font-size: 4vw;
+    /* Responsive huge cinematic text */
+    font-weight: 800;
+    color: #fff;
+    margin: 0;
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px rgba(0, 198, 255, 0.3);
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 15px;
+}
+
+.word {
+    display: inline-flex;
+}
+
+.char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(10px);
+    animation: revealChar 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+.space {
+    display: inline-block;
+    width: 0.5em;
+    /* approximate space width */
+}
+
+@keyframes revealChar {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(10px);
+        color: transparent;
+        text-shadow: 0 0 0 transparent;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+        color: #ffffff;
+        text-shadow: 0 0 15px rgba(0, 198, 255, 0.4);
+    }
+}
+
+/* Smooth Light Sweep
+   We create absolute block covering the wrapper that mixes blend mode and animated sweep */
+.sweep-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    overflow: hidden;
+    mix-blend-mode: overlay;
+    /* makes the sweep enhance the whites underneath */
+}
+
+.light-sweep {
+    position: absolute;
+    top: -50%;
+    bottom: -50%;
+    width: 150px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.0) 30%,
+            rgba(255, 255, 255, 0.8) 50%,
+            rgba(0, 198, 255, 0.6) 70%,
+            transparent 100%);
+    transform: skewX(-20deg) translateX(-1500px);
+    filter: blur(5px);
+    /* Sweep waits for characters to finish revealing, say 3 seconds in */
+    animation: textSweep 4s cubic-bezier(0.25, 1, 0.5, 1) calc(0.04s * 40 + 1s) forwards;
+}
+
+@keyframes textSweep {
+    0% {
+        transform: skewX(-20deg) translateX(-1500px);
+    }
+
+    100% {
+        transform: skewX(-20deg) translateX(3500px);
+    }
+}
+
+/* Responsiveness overrides to ensure it bounds well into normal sites */
+@media (max-width: 1200px) {
+    .title-reveal {
+        font-size: 5vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .title-reveal {
+        font-size: 6vw;
+    }
+}

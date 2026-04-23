@@ -1,0 +1,51 @@
+.profile-hero {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #11141b;
+  border: 1px solid #2a2d35;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 28px;
+}
+
+.profile-avatar {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #2684ff, #0052cc);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.profile-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.profile-email {
+  font-size: 13px;
+  color: #8b9ab1;
+  margin-bottom: 8px;
+}
+
+.success-msg {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #10b98122;
+  border: 1px solid #10b981;
+  color: #10b981;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-bottom: 16px;
+  max-width: 480px;
+}

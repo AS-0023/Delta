@@ -1,0 +1,128 @@
+/* AIFeaturesSection.css */
+.ai-features-section {
+    position: relative;
+    width: 100%;
+    min-height: 900px;
+    background-color: #000000;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.ai-features-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    /* Allows user to click overlay if needed */
+}
+
+.ai-features-overlay {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    text-align: center;
+    padding: 60px 40px;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.7) 0%, transparent 70%);
+    pointer-events: auto;
+}
+
+.ai-eyebrow {
+    color: #4285F4;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 24px;
+}
+
+.ai-title {
+    color: #ffffff;
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 1);
+    letter-spacing: -1px;
+}
+
+.ai-description {
+    color: #b3b3b3;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    max-width: 650px;
+    margin: 0 auto 40px auto;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 1);
+}
+
+.ai-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.btn-ai-primary {
+    background: linear-gradient(90deg, #4285F4, #9D72FF);
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    padding: 14px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(66, 133, 244, 0.4);
+}
+
+.btn-ai-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(157, 114, 255, 0.6);
+}
+
+.btn-ai-secondary {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    padding: 14px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.btn-ai-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .ai-features-section {
+        min-height: 700px;
+    }
+
+    .ai-features-overlay {
+        padding: 40px 20px;
+    }
+
+    .ai-title {
+        font-size: 2.8rem;
+    }
+
+    .ai-description {
+        font-size: 1.1rem;
+    }
+
+    .ai-actions {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}

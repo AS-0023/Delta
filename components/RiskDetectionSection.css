@@ -1,0 +1,215 @@
+/* RiskDetectionSection.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.risk-detection-section {
+    padding: 40px 5%;
+    background: #0a0c10;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.risk-detection-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px;
+}
+
+/* ── LEFT COLUMN ─────────────────────────────────────────────────── */
+.risk-detection-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.ai-section-title {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.1;
+    color: #ffffff;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+}
+
+.ai-section-subtitle {
+    font-size: 18px;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+/* ── RIGHT COLUMN: Animation ────────────────────────────────────────────────── */
+.risk-detection-right {
+    flex: 1;
+    width: 100%;
+}
+
+.animation-container {
+    background: #0d1117;
+    border-radius: 20px;
+    padding: 30px;
+    height: 600px;
+    /* Taller for 6 lines */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.prompt-bubble {
+    background: #ffffff;
+    color: #0f172a;
+    padding: 18px 24px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    max-width: 90%;
+    align-self: flex-end;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    line-height: 1.5;
+    animation: fadeInUp 0.3s ease-out;
+}
+
+.custom-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 14px;
+    background: #0f172a;
+    margin-left: 4px;
+    animation: blink 1s infinite;
+    vertical-align: middle;
+}
+
+.task-card {
+    background: #1e293b;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background-clip: padding-box;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    animation: fadeInUp 0.4s ease-out;
+    margin-top: 8px;
+}
+
+.task-card.active-gradient::before {
+    content: '';
+    position: absolute;
+    inset: -1.5px;
+    border-radius: 13.5px;
+    background: linear-gradient(135deg, #FFC040, #ea4335, #4285f4);
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.card-title {
+    font-weight: 600;
+    font-size: 15px;
+    color: #f8fafc;
+}
+
+.card-subtitle {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-top: 4px;
+}
+
+.progress-updates-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.progress-updates-title {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #64748b;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.expand-all {
+    font-size: 11px;
+    color: #94a3b8;
+    cursor: pointer;
+}
+
+.updates-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.update-item {
+    font-size: 13px;
+    color: #e2e8f0;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    line-height: 1.4;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.update-num {
+    color: #64748b;
+    font-variant-numeric: tabular-nums;
+    font-size: 11px;
+    margin-top: 2px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.bottom-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, #0d1117);
+    pointer-events: none;
+    z-index: 10;
+}
+
+@media (max-width: 960px) {
+    .risk-detection-container {
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .risk-detection-left {
+        width: 100%;
+        max-width: unset;
+        padding-top: 0;
+    }
+}
